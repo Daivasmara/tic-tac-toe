@@ -1,4 +1,5 @@
 # Vue.js Tic-Tac-Toe Game!
+### 1 Day 1 App => Day 2
 
 A simple Tic-Tac-Toe Game created with only Vue.js!
 
