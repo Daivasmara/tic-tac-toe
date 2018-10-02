@@ -1,6 +1,6 @@
 # Vue.js Tic-Tac-Toe Game!
 
-A simple Tic-Tac-Toe Game created with only Vue.js!
+A simple Tic-Tac-Toe game created with only Vue.js!
 
 
 
