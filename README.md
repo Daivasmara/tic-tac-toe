@@ -4,8 +4,8 @@ A simple Tic-Tac-Toe Game created with only Vue.js!
 
 ## Will be Added Soon
 
-* End Game Result Screen
-* Forbid Player to Replace Already Filled Panel
+* End game result screen
+* Forbid player to replace already filled panel
 
 
 ### How to Run this App
