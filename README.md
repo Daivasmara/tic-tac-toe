@@ -6,7 +6,7 @@ A simple Tic-Tac-Toe Game created with only Vue.js!
 
 ## Will be Added Soon
 
-* End game result screen
+* Winner result screen
 * Forbid player to replace already filled panel
 
 
