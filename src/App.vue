@@ -45,25 +45,25 @@ export default {
   },
   methods: {
     changeTurn(number) {
-      number === 1
+      number === 1 && this.area1 == ""
         ? (this.area1 = this.symbol)
-        : number === 2
+        : number === 2 && this.area2 == ""
           ? (this.area2 = this.symbol)
-          : number === 3
+          : number === 3 && this.area3 == ""
             ? (this.area3 = this.symbol)
-            : number === 4
+            : number === 4 && this.area4 == ""
               ? (this.area4 = this.symbol)
-              : number === 5
+              : number === 5 && this.area5 == ""
                 ? (this.area5 = this.symbol)
-                : number === 6
+                : number === 6 && this.area6 == ""
                   ? (this.area6 = this.symbol)
-                  : number === 7
+                  : number === 7 && this.area7 == ""
                     ? (this.area7 = this.symbol)
-                    : number === 8
+                    : number === 8 && this.area8 == ""
                       ? (this.area8 = this.symbol)
-                      : number === 9
+                      : number === 9 && this.area9 == ""
                         ? (this.area9 = this.symbol)
-                        : void 0,
+                        : (this.player1Turn = !this.player1Turn),
         (this.player1Turn = !this.player1Turn);
     }
   },
