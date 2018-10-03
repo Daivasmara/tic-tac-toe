@@ -94,7 +94,8 @@ export default {
         (this.area6 = ""),
         (this.area7 = ""),
         (this.area8 = ""),
-        (this.area9 = "");
+        (this.area9 = ""),
+        (this.player1Turn = true);
     }
   },
   watch: {
