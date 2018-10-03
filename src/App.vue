@@ -17,8 +17,26 @@
           <div @click="changeTurn(9)" class="col grid s4 m2"><i class="large material-icons">{{ area9 }}</i></div>
         </div>
         <div class="row">
-          <a class="waves-effect waves-light btn col s6 m3 offset-m3" :class="{ disabled : !player1Turn }"><i class="material-icons left">panorama_fish_eye</i>PLAYER 1</a>
-          <a class="waves-effect waves-light btn col s6 m3" :class="{ disabled : player1Turn }"><i class="material-icons right">clear</i>PLAYER 2</a>
+          <a
+            class="waves-effect waves-light btn col s6 m3 offset-m3"
+            :class="{ disabled : !player1Turn }">
+            <i class="material-icons left">panorama_fish_eye</i>
+            PLAYER 1
+          </a>
+          <a
+            class="waves-effect waves-light btn col s6 m3"
+            :class="{ disabled : player1Turn }">
+            <i class="material-icons right">clear</i>
+            PLAYER 2
+          </a>
+          <transition name="bounce">
+            <a
+              v-if="area1 || area2 || area3 || area4 || area5 || area6 || area7 || area8 || area9 !== ''"
+              @click="reset"
+              class="teal-text col s12 m6 offset-m3 center refresh">
+              <i class="medium material-icons">refresh</i>
+            </a>
+          </transition>
         </div>
       </div>
     </div>
@@ -65,6 +83,17 @@ export default {
                         ? (this.area9 = this.symbol)
                         : (this.player1Turn = !this.player1Turn),
         (this.player1Turn = !this.player1Turn);
+    },
+    reset() {
+      (this.area1 = ""),
+        (this.area2 = ""),
+        (this.area3 = ""),
+        (this.area4 = ""),
+        (this.area5 = ""),
+        (this.area6 = ""),
+        (this.area7 = ""),
+        (this.area8 = ""),
+        (this.area9 = "");
     }
   },
   watch: {
@@ -88,6 +117,27 @@ export default {
       border: 1px solid #26a69a;
       cursor: pointer;
     }
+  }
+  .bounce-enter-active {
+    animation: bounce-in 0.5s;
+  }
+  .bounce-leave-active {
+    animation: bounce-in 0.5s reverse;
+  }
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .refresh {
+    cursor: pointer;
+    margin-top: 30px;
   }
 }
 </style>
