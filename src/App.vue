@@ -26,60 +26,68 @@
 </template>
 
 <script>
-
 export default {
   name: "app",
   data() {
     return {
       player1Turn: true,
-      symbol: 'panorama_fish_eye',
-      area1: '',
-      area2: '',
-      area3: '',
-      area4: '',
-      area5: '',
-      area6: '',
-      area7: '',
-      area8: '',
-      area9: '',
-    }
+      symbol: "panorama_fish_eye",
+      area1: "",
+      area2: "",
+      area3: "",
+      area4: "",
+      area5: "",
+      area6: "",
+      area7: "",
+      area8: "",
+      area9: ""
+    };
   },
   methods: {
     changeTurn(number) {
-      number === 1 ? this.area1 = this.symbol :
-      number === 2 ? this.area2 = this.symbol :
-      number === 3 ? this.area3 = this.symbol :
-      number === 4 ? this.area4 = this.symbol :
-      number === 5 ? this.area5 = this.symbol :
-      number === 6 ? this.area6 = this.symbol :
-      number === 7 ? this.area7 = this.symbol :
-      number === 8 ? this.area8 = this.symbol :
-      number === 9 ? this.area9 = this.symbol :
-      void(0),
-      this.player1Turn = !this.player1Turn
+      number === 1
+        ? (this.area1 = this.symbol)
+        : number === 2
+          ? (this.area2 = this.symbol)
+          : number === 3
+            ? (this.area3 = this.symbol)
+            : number === 4
+              ? (this.area4 = this.symbol)
+              : number === 5
+                ? (this.area5 = this.symbol)
+                : number === 6
+                  ? (this.area6 = this.symbol)
+                  : number === 7
+                    ? (this.area7 = this.symbol)
+                    : number === 8
+                      ? (this.area8 = this.symbol)
+                      : number === 9
+                        ? (this.area9 = this.symbol)
+                        : void 0,
+        (this.player1Turn = !this.player1Turn);
     }
   },
   watch: {
     player1Turn() {
-      if(this.player1Turn) {
-        this.symbol = 'panorama_fish_eye'
+      if (this.player1Turn) {
+        this.symbol = "panorama_fish_eye";
       } else {
-        this.symbol = 'clear'
+        this.symbol = "clear";
+      }
     }
   }
-}
 };
 </script>
 
 <style lang="scss">
-  .tictactoe{
-    margin-top: 80px;
-    .gamearea{
-      .grid{
-        height: 100px;
-        border: 1px solid #26a69a;
-        cursor: pointer;
-      }
+.tictactoe {
+  margin-top: 80px;
+  .gamearea {
+    .grid {
+      height: 100px;
+      border: 1px solid #26a69a;
+      cursor: pointer;
     }
   }
+}
 </style>
