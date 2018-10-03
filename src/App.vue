@@ -58,7 +58,8 @@ export default {
       area6: "",
       area7: "",
       area8: "",
-      area9: ""
+      area9: "",
+      winner: ""
     };
   },
   methods: {

@@ -4,10 +4,6 @@ A simple Tic-Tac-Toe game created with only Vue.js!
 
 
 
-## Will be Added Soon
-
-* Winner result screen
-
 ### How to Run this App
 ```
 npm install
