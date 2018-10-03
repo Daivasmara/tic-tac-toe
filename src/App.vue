@@ -65,7 +65,7 @@ export default {
       area8: "8",
       area9: "9",
       result: false,
-      winner: ''
+      winner: ""
     };
   },
   methods: {
@@ -89,40 +89,39 @@ export default {
                       : number === 9 && this.area9 == "9"
                         ? (this.area9 = this.symbol)
                         : (this.player1Turn = !this.player1Turn),
-        this.area1 === this.area2 && this.area1 === this.area3 ?
-          this.area1 === 'panorama_fish_eye' ?
-            (this.winner = 'Player 1', this.result = true) :
-              (this.winner = 'Player 2', this.result = true) :
-        this.area4 === this.area5 && this.area4 === this.area6 ?
-          this.area4 === 'panorama_fish_eye' ?
-            (this.winner = 'Player 1', this.result = true) :
-              (this.winner = 'Player 2', this.result = true) :
-        this.area7 === this.area8 && this.area7 === this.area9 ?
-          this.area7 === 'panorama_fish_eye' ?
-            (this.winner = 'Player 1', this.result = true) :
-              (this.winner = 'Player 2', this.result = true) :
-        this.area1 === this.area4 && this.area1 === this.area7 ?
-          this.area1 === 'panorama_fish_eye' ?
-            (this.winner = 'Player 1', this.result = true) :
-              (this.winner = 'Player 2', this.result = true) :
-        this.area2 === this.area5 && this.area2 === this.area8 ?
-          this.area2 === 'panorama_fish_eye' ?
-            (this.winner = 'Player 1', this.result = true) :
-              (this.winner = 'Player 2', this.result = true) :
-        this.area3 === this.area6 && this.area3 === this.area9 ?
-          this.area3 === 'panorama_fish_eye' ?
-            (this.winner = 'Player 1', this.result = true) :
-              (this.winner = 'Player 2', this.result = true) :
-        this.area1 === this.area5 && this.area1 === this.area9 ?
-          this.area1 === 'panorama_fish_eye' ?
-            (this.winner = 'Player 1', this.result = true) :
-              (this.winner = 'Player 2', this.result = true) :
-        this.area7 === this.area5 && this.area7 === this.area3 ?
-          this.area7 === 'panorama_fish_eye' ?
-            (this.winner = 'Player 1', this.result = true) :
-              (this.winner = 'Player 2', this.result = true) :
-        (this.player1Turn = !this.player1Turn);
-
+        this.area1 === this.area2 && this.area1 === this.area3
+          ? this.area1 === "panorama_fish_eye"
+            ? ((this.winner = "Player 1"), (this.result = true))
+            : ((this.winner = "Player 2"), (this.result = true))
+          : this.area4 === this.area5 && this.area4 === this.area6
+            ? this.area4 === "panorama_fish_eye"
+              ? ((this.winner = "Player 1"), (this.result = true))
+              : ((this.winner = "Player 2"), (this.result = true))
+            : this.area7 === this.area8 && this.area7 === this.area9
+              ? this.area7 === "panorama_fish_eye"
+                ? ((this.winner = "Player 1"), (this.result = true))
+                : ((this.winner = "Player 2"), (this.result = true))
+              : this.area1 === this.area4 && this.area1 === this.area7
+                ? this.area1 === "panorama_fish_eye"
+                  ? ((this.winner = "Player 1"), (this.result = true))
+                  : ((this.winner = "Player 2"), (this.result = true))
+                : this.area2 === this.area5 && this.area2 === this.area8
+                  ? this.area2 === "panorama_fish_eye"
+                    ? ((this.winner = "Player 1"), (this.result = true))
+                    : ((this.winner = "Player 2"), (this.result = true))
+                  : this.area3 === this.area6 && this.area3 === this.area9
+                    ? this.area3 === "panorama_fish_eye"
+                      ? ((this.winner = "Player 1"), (this.result = true))
+                      : ((this.winner = "Player 2"), (this.result = true))
+                    : this.area1 === this.area5 && this.area1 === this.area9
+                      ? this.area1 === "panorama_fish_eye"
+                        ? ((this.winner = "Player 1"), (this.result = true))
+                        : ((this.winner = "Player 2"), (this.result = true))
+                      : this.area7 === this.area5 && this.area7 === this.area3
+                        ? this.area7 === "panorama_fish_eye"
+                          ? ((this.winner = "Player 1"), (this.result = true))
+                          : ((this.winner = "Player 2"), (this.result = true))
+                        : (this.player1Turn = !this.player1Turn);
     },
     reset() {
       (this.area1 = "1"),
@@ -135,8 +134,8 @@ export default {
         (this.area8 = "8"),
         (this.area9 = "9"),
         (this.player1Turn = true),
-        this.result = false,
-        this.winner = '';
+        (this.result = false),
+        (this.winner = "");
     }
   },
   watch: {
