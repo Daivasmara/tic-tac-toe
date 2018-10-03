@@ -31,10 +31,15 @@
           </a>
           <transition name="bounce">
             <a
-              v-if="area1 || area2 || area3 || area4 || area5 || area6 || area7 || area8 || area9 !== ''"
+              v-if="area1 !== '1' || area2 !== '2' || area3 !== '3' || area4 !== '4' || area5 !== '5' || area6 !== '6' || area7 !== '7' || area8 !== '8' || area9 !== '9' "
               @click="reset"
               class="teal-text col s12 m6 offset-m3 center refresh">
               <i class="medium material-icons">refresh</i>
+            </a>
+          </transition>
+          <transition name="bounce">
+            <a v-if="result" class="waves-effect waves-light btn col s12 m6 offset-m3 pulse">
+              {{ winner }} VICTORY
             </a>
           </transition>
         </div>
@@ -50,52 +55,88 @@ export default {
     return {
       player1Turn: true,
       symbol: "panorama_fish_eye",
-      area1: "",
-      area2: "",
-      area3: "",
-      area4: "",
-      area5: "",
-      area6: "",
-      area7: "",
-      area8: "",
-      area9: "",
-      winner: ""
+      area1: "1",
+      area2: "2",
+      area3: "3",
+      area4: "4",
+      area5: "5",
+      area6: "6",
+      area7: "7",
+      area8: "8",
+      area9: "9",
+      result: false,
+      winner: ''
     };
   },
   methods: {
     changeTurn(number) {
-      number === 1 && this.area1 == ""
+      number === 1 && this.area1 == "1"
         ? (this.area1 = this.symbol)
-        : number === 2 && this.area2 == ""
+        : number === 2 && this.area2 == "2"
           ? (this.area2 = this.symbol)
-          : number === 3 && this.area3 == ""
+          : number === 3 && this.area3 == "3"
             ? (this.area3 = this.symbol)
-            : number === 4 && this.area4 == ""
+            : number === 4 && this.area4 == "4"
               ? (this.area4 = this.symbol)
-              : number === 5 && this.area5 == ""
+              : number === 5 && this.area5 == "5"
                 ? (this.area5 = this.symbol)
-                : number === 6 && this.area6 == ""
+                : number === 6 && this.area6 == "6"
                   ? (this.area6 = this.symbol)
-                  : number === 7 && this.area7 == ""
+                  : number === 7 && this.area7 == "7"
                     ? (this.area7 = this.symbol)
-                    : number === 8 && this.area8 == ""
+                    : number === 8 && this.area8 == "8"
                       ? (this.area8 = this.symbol)
-                      : number === 9 && this.area9 == ""
+                      : number === 9 && this.area9 == "9"
                         ? (this.area9 = this.symbol)
                         : (this.player1Turn = !this.player1Turn),
+        this.area1 === this.area2 && this.area1 === this.area3 ?
+          this.area1 === 'panorama_fish_eye' ?
+            (this.winner = 'Player 1', this.result = true) :
+              (this.winner = 'Player 2', this.result = true) :
+        this.area4 === this.area5 && this.area4 === this.area6 ?
+          this.area4 === 'panorama_fish_eye' ?
+            (this.winner = 'Player 1', this.result = true) :
+              (this.winner = 'Player 2', this.result = true) :
+        this.area7 === this.area8 && this.area7 === this.area9 ?
+          this.area7 === 'panorama_fish_eye' ?
+            (this.winner = 'Player 1', this.result = true) :
+              (this.winner = 'Player 2', this.result = true) :
+        this.area1 === this.area4 && this.area1 === this.area7 ?
+          this.area1 === 'panorama_fish_eye' ?
+            (this.winner = 'Player 1', this.result = true) :
+              (this.winner = 'Player 2', this.result = true) :
+        this.area2 === this.area5 && this.area2 === this.area8 ?
+          this.area2 === 'panorama_fish_eye' ?
+            (this.winner = 'Player 1', this.result = true) :
+              (this.winner = 'Player 2', this.result = true) :
+        this.area3 === this.area6 && this.area3 === this.area9 ?
+          this.area3 === 'panorama_fish_eye' ?
+            (this.winner = 'Player 1', this.result = true) :
+              (this.winner = 'Player 2', this.result = true) :
+        this.area1 === this.area5 && this.area1 === this.area9 ?
+          this.area1 === 'panorama_fish_eye' ?
+            (this.winner = 'Player 1', this.result = true) :
+              (this.winner = 'Player 2', this.result = true) :
+        this.area7 === this.area5 && this.area7 === this.area3 ?
+          this.area7 === 'panorama_fish_eye' ?
+            (this.winner = 'Player 1', this.result = true) :
+              (this.winner = 'Player 2', this.result = true) :
         (this.player1Turn = !this.player1Turn);
+
     },
     reset() {
-      (this.area1 = ""),
-        (this.area2 = ""),
-        (this.area3 = ""),
-        (this.area4 = ""),
-        (this.area5 = ""),
-        (this.area6 = ""),
-        (this.area7 = ""),
-        (this.area8 = ""),
-        (this.area9 = ""),
-        (this.player1Turn = true);
+      (this.area1 = "1"),
+        (this.area2 = "2"),
+        (this.area3 = "3"),
+        (this.area4 = "4"),
+        (this.area5 = "5"),
+        (this.area6 = "6"),
+        (this.area7 = "7"),
+        (this.area8 = "8"),
+        (this.area9 = "9"),
+        (this.player1Turn = true),
+        this.result = false,
+        this.winner = '';
     }
   },
   watch: {
