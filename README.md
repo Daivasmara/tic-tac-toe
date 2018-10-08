@@ -1,7 +1,7 @@
 # Vue.js Tic-Tac-Toe Game!
 
 A simple Tic-Tac-Toe game created with only Vue.js!
-
+The App is deployed here https://dist-jrjraeqeva.now.sh/ Play it Live!
 
 
 ### How to Run this App
