@@ -6,39 +6,73 @@
           <h1 class="center teal-text">Tic-Tac-Toe</h1>
         </div>
         <div class="gamearea row center-align teal-text">
-          <div @click="changeTurn(1)" class="col grid s4 m2 offset-m3"><i class="large material-icons">{{ area1 }}</i></div>
-          <div @click="changeTurn(2)" class="col grid s4 m2"><i class="large material-icons">{{ area2 }}</i></div>
-          <div @click="changeTurn(3)" class="col grid s4 m2"><i class="large material-icons">{{ area3 }}</i></div>
-          <div @click="changeTurn(4)" class="col grid s4 m2 offset-m3"><i class="large material-icons">{{ area4 }}</i></div>
-          <div @click="changeTurn(5)" class="col grid s4 m2"><i class="large material-icons">{{ area5 }}</i></div>
-          <div @click="changeTurn(6)" class="col grid s4 m2"><i class="large material-icons">{{ area6 }}</i></div>
-          <div @click="changeTurn(7)" class="col grid s4 m2 offset-m3"><i class="large material-icons">{{ area7 }}</i></div>
-          <div @click="changeTurn(8)" class="col grid s4 m2"><i class="large material-icons">{{ area8 }}</i></div>
-          <div @click="changeTurn(9)" class="col grid s4 m2"><i class="large material-icons">{{ area9 }}</i></div>
+          <div @click="changeTurn(1)" class="col grid s4 m2 offset-m3">
+            <i class="large material-icons">{{ area1 }}</i>
+          </div>
+          <div @click="changeTurn(2)" class="col grid s4 m2">
+            <i class="large material-icons">{{ area2 }}</i>
+          </div>
+          <div @click="changeTurn(3)" class="col grid s4 m2">
+            <i class="large material-icons">{{ area3 }}</i>
+          </div>
+          <div @click="changeTurn(4)" class="col grid s4 m2 offset-m3">
+            <i class="large material-icons">{{ area4 }}</i>
+          </div>
+          <div @click="changeTurn(5)" class="col grid s4 m2">
+            <i class="large material-icons">{{ area5 }}</i>
+          </div>
+          <div @click="changeTurn(6)" class="col grid s4 m2">
+            <i class="large material-icons">{{ area6 }}</i>
+          </div>
+          <div @click="changeTurn(7)" class="col grid s4 m2 offset-m3">
+            <i class="large material-icons">{{ area7 }}</i>
+          </div>
+          <div @click="changeTurn(8)" class="col grid s4 m2">
+            <i class="large material-icons">{{ area8 }}</i>
+          </div>
+          <div @click="changeTurn(9)" class="col grid s4 m2">
+            <i class="large material-icons">{{ area9 }}</i>
+          </div>
         </div>
         <div class="row">
           <a
             class="waves-effect waves-light btn col s6 m3 offset-m3"
-            :class="{ disabled : !player1Turn }">
+            :class="{ disabled: !player1Turn }"
+          >
             <i class="material-icons left">panorama_fish_eye</i>
             PLAYER 1
           </a>
           <a
             class="waves-effect waves-light btn col s6 m3"
-            :class="{ disabled : player1Turn }">
+            :class="{ disabled: player1Turn }"
+          >
             <i class="material-icons right">clear</i>
             PLAYER 2
           </a>
           <transition name="bounce">
             <a
-              v-if="area1 !== '1' || area2 !== '2' || area3 !== '3' || area4 !== '4' || area5 !== '5' || area6 !== '6' || area7 !== '7' || area8 !== '8' || area9 !== '9' "
+              v-if="
+                area1 !== '1' ||
+                  area2 !== '2' ||
+                  area3 !== '3' ||
+                  area4 !== '4' ||
+                  area5 !== '5' ||
+                  area6 !== '6' ||
+                  area7 !== '7' ||
+                  area8 !== '8' ||
+                  area9 !== '9'
+              "
               @click="reset"
-              class="teal-text col s12 m6 offset-m3 center refresh">
+              class="teal-text col s12 m6 offset-m3 center refresh"
+            >
               <i class="medium material-icons">refresh</i>
             </a>
           </transition>
           <transition name="bounce">
-            <a v-if="result" class="waves-effect waves-light btn col s12 m6 offset-m3 pulse">
+            <a
+              v-if="result"
+              class="waves-effect waves-light btn col s12 m6 offset-m3 pulse"
+            >
               {{ winner }} VICTORY
             </a>
           </transition>
@@ -49,6 +83,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
   name: "app",
   data() {
